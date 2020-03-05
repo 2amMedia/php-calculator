@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+
+  p {
+ 
+      font-family: "Helvetica Neue", Arial, sans-serif;
+}  
+      p {
+  color: lightgoldenrodyellow;
+}
+  p {
+  font-size: 28px;
+  }
+      body{ 
+ font-family: "Times New Roman", Times, serif;
+}    
+      body {
+          font-size: 50px;
+      }
+      body {
+  background-color: lightblue;
+}
+      body {
+  color: palevioletred;
+}
+ 
+      input[type=text] {
+  width: 10%;
+  padding: 8px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+      input[type=text] {
+  border: 2px solid palevioletred;
+  border-radius: 14px;
+}
+      input[type=text] {
+  background-color: lightgoldenrodyellow;
+  color: antiquewhite;
+          }
+button {
+  width: 150px;
+  color: palevioletred;
+  background-color: lightgoldenrodyellow;
+  display: block;
+}
+    </style>
+  <body>
+   
+    <form method="get">
+      <input type="text" name="num1" placeholder="Number 1">
+      <br>
+     
+      <select name="operator">
+        <option>None</option>
+        <option>Add</option>
+        <option>Subtract</option>
+        <option>Multiply</option>
+        <option>Divide</option>
+      </select>
+      <br>
+       <input type="text" name="num2" placeholder="Number 2">
+      <br>
+         <button type="submit" name="submit">Calculate</button>
+    </form>
+
+    <p>The answer is:</p>
+    <?php
+
+      if (isset($_GET['submit'])) {
+
+          
+        $result1 = $_GET['num1'];
+        $result2 = $_GET['num2'];
+        $operator = $_GET['operator'];
+
+
+        switch ($operator) {
+          case "None":
+            echo "You must select an operator!";
+            break;
+          case "Add":
+            echo $result1 + $result2;
+            break;
+          case "Subtract":
+            echo $result1 - $result2;
+            break;
+          case "Multiply":
+            echo $result1 * $result2;
+            break;
+          case "Divide":
+            echo $result1 / $result2;
+            break;
+          default:
+            echo "Error!";
+            break;
+        }
+      }
+    ?>
+  </body>
+</html>
